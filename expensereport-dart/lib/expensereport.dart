@@ -28,7 +28,7 @@ class ExpenseReport {
                 case ExpenseType.CAR_RENTAL: expenseName = 'Car Rental'; break;
             };
             var mealOverExpensesMarker = expense.type == ExpenseType.DINNER && expense.amount > 5000 || expense.type == ExpenseType.BREAKFAST && expense.amount > 1000 ? 'X' : ' ';
-            print('$expenseName\t${expense.amount}\t$mealOverExpensesMarker');
+            print('${expenseName.padRight(20)}${expense.amount.toString().padRight(20)}$mealOverExpensesMarker');
             totalExpenses += expense.amount;
         }
         print('Meal Expenses: $mealExpenses');
